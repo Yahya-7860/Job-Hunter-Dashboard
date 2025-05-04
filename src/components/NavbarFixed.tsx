@@ -12,15 +12,12 @@ import {
 } from "@/components/ui/resizable-navbar";
 import { useState } from "react";
 import { SpotlightEffect } from "./SpotlightEffect";
+import SlidingCards from "../components/SlidingCards";
 
 export function NavbarFixed() {
   const navItems = [
     {
-      name: "Features",
-      link: "#features",
-    },
-    {
-      name: "Pricing",
+      name: "Resume Tips",
       link: "#pricing",
     },
     {
@@ -80,6 +77,9 @@ export function NavbarFixed() {
         </MobileNav>
       </Navbar>
       <SpotlightEffect />
+      <SlidingCards />
+
+      {/* Navbar */}
     </div>
   );
 }
