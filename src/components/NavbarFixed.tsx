@@ -13,16 +13,23 @@ import {
 import { useState } from "react";
 import { SpotlightEffect } from "./SpotlightEffect";
 import SlidingCards from "../components/SlidingCards";
+import { CompanyMarquee } from "./CompanyMarquee";
+import { Footer } from "./Footer";
+import Link from "next/link";
 
 export function NavbarFixed() {
   const navItems = [
     {
       name: "Resume Tips",
-      link: "#pricing",
+      link: "/ResumeTips",
+    },
+    {
+      name: "Resume Mistakes",
+      link: "/AvoidResumeMistakes",
     },
     {
       name: "About Us",
-      link: "#contact",
+      link: "/AboutUs",
     },
   ];
 
@@ -36,7 +43,13 @@ export function NavbarFixed() {
           <NavbarLogo />
           <NavItems items={navItems} />
           <div className="flex items-center gap-4">
-            <NavbarButton variant="primary">Notify Me</NavbarButton>
+            <NavbarButton
+              variant="primary"
+              className="w-full"
+              href="https://chat.whatsapp.com/FRlwi3kKfCZ8nD0TPdUlUN"
+            >
+              Join WhatsApp Group
+            </NavbarButton>
           </div>
         </NavBody>
 
@@ -66,11 +79,11 @@ export function NavbarFixed() {
             ))}
             <div className="flex w-full flex-col gap-4">
               <NavbarButton
-                onClick={() => setIsMobileMenuOpen(false)}
                 variant="primary"
                 className="w-full"
+                href="https://chat.whatsapp.com/FRlwi3kKfCZ8nD0TPdUlUN"
               >
-                Notify Me
+                Join WhatsApp Group
               </NavbarButton>
             </div>
           </MobileNavMenu>
@@ -78,6 +91,8 @@ export function NavbarFixed() {
       </Navbar>
       <SpotlightEffect />
       <SlidingCards />
+      <CompanyMarquee />
+      <Footer />
 
       {/* Navbar */}
     </div>

@@ -7,7 +7,7 @@ import {
   useScroll,
   useMotionValueEvent,
 } from "motion/react";
-
+import Image from "next/image";
 import React, { useRef, useState } from "react";
 
 interface NavbarProps {
@@ -231,19 +231,26 @@ export const MobileNavToggle = ({
 
 export const NavbarLogo = () => {
   return (
-    <a
-      href="#"
-      className="relative z-20 mr-4 flex items-center space-x-2 px-2 py-1 text-sm font-normal text-black"
-    >
-      <img
-        src="/favicon.jpg"
-        alt="logo"
-        width={30}
-        height={30}
-        className="rounded-xl"
-      />
-      <span className="font-bold text-black dark:text-white ">Job Hunter</span>
-    </a>
+    <div className="flex items-start">
+      <a
+        href="#"
+        className="relative z-20 mr-4 flex items-center space-x-2 px-2 py-1 text-sm font-normal text-black"
+      >
+        <Image
+          src="/favicon.jpg"
+          alt="logo"
+          width={30}
+          height={30}
+          className="rounded-xl"
+        />
+      </a>
+      <div>
+        <p className="font-bold text-black dark:text-white ">Job Hunter</p>
+        <p className=" text-gray-300 text-[8px]">
+          Helping Fresher Land Their First Job
+        </p>
+      </div>
+    </div>
   );
 };
 

@@ -3,8 +3,8 @@
 import React from "react";
 import { Carousel, Card } from "@/components/ui/apple-cards-carousel";
 import ExpandJobCard from "./ExpandJobCard";
-import ResumeTips from "../pages/ResumeTipsPage";
-import AvoidResumeMistakes from "@/pages/AvoidResumeMistakes";
+import ResumeTips from "../app/ResumeTips/page";
+import AvoidResumeMistakes from "@/app/AvoidResumeMistakes/page";
 
 export default function SlidingCards() {
   const cards = data.map((card, index) => (
@@ -33,19 +33,19 @@ const data = [
   {
     category: "Just For You",
     title: "See Latest Fresher Job",
-    src: "/interview.jpg",
+    src: "/images/hiring.jpg",
     content: <DummyContent />,
   },
   {
     category: "Too much valuable",
     title: "Resume Tips",
-    src: "/resume.png",
+    src: "/images/resume.png",
     content: <ResumeTips />,
   },
   {
     category: "Caution",
     title: "Avoid Resume Mistakes",
-    src: "/resumeAvoid.jpg",
+    src: "/images/resumeAvoid.jpg",
     content: <AvoidResumeMistakes />,
   },
 ];
