@@ -5,6 +5,7 @@ import { Carousel, Card } from "@/components/ui/apple-cards-carousel";
 import ExpandJobCard from "./ExpandJobCard";
 import ResumeTips from "../app/ResumeTips/page";
 import AvoidResumeMistakes from "@/app/AvoidResumeMistakes/page";
+import { Button } from "./ui/moving-border";
 
 export default function SlidingCards() {
   const cards = data.map((card, index) => (
@@ -13,7 +14,7 @@ export default function SlidingCards() {
 
   return (
     <div className="w-full h-full py-20">
-      <h2 className="max-w-7xl pl-4 mx-auto text-xl md:text-5xl font-bold text-neutral-800 dark:text-neutral-200 font-sans">
+      <h2 className="max-w-7xl pl-4 mx-auto text-xl md:text-5xl font-bold text-neutral-800 dark:text-neutral-200 font-sans ">
         Indore Based Hiring Updates
       </h2>
       <Carousel items={cards} />

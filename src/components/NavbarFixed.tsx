@@ -16,6 +16,7 @@ import SlidingCards from "../components/SlidingCards";
 import { CompanyMarquee } from "./CompanyMarquee";
 import { Footer } from "./Footer";
 import Link from "next/link";
+import ThemeToggle from "./ModeButton";
 
 export function NavbarFixed() {
   const navItems = [
@@ -36,7 +37,7 @@ export function NavbarFixed() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <div className="relative w-full">
+    <div className="w-full bg-white dark:bg-black">
       <Navbar>
         {/* Desktop Navigation */}
         <NavBody>
@@ -57,10 +58,13 @@ export function NavbarFixed() {
         <MobileNav>
           <MobileNavHeader>
             <NavbarLogo />
-            <MobileNavToggle
-              isOpen={isMobileMenuOpen}
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            />
+            <div className="flex items-center gap-4">
+              <ThemeToggle />
+              <MobileNavToggle
+                isOpen={isMobileMenuOpen}
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              />
+            </div>
           </MobileNavHeader>
 
           <MobileNavMenu
@@ -72,7 +76,7 @@ export function NavbarFixed() {
                 key={`mobile-link-${idx}`}
                 href={item.link}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="relative text-neutral-600 dark:text-neutral-300"
+                className="relative text-black dark:text-neutral-300"
               >
                 <span className="block">{item.name}</span>
               </a>
@@ -80,7 +84,7 @@ export function NavbarFixed() {
             <div className="flex w-full flex-col gap-4">
               <NavbarButton
                 variant="primary"
-                className="w-full"
+                className="w-full dark:bg-white dark:text-black bg-black text-white"
                 href="https://chat.whatsapp.com/FRlwi3kKfCZ8nD0TPdUlUN"
               >
                 Join WhatsApp Group

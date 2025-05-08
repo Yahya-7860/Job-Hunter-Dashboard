@@ -29,10 +29,10 @@ export function CompanyMarquee() {
   ];
   return (
     <div>
-      <h1 className="flex justify-center font-bold text-xl px-3">
+      <h1 className="flex justify-center font-bold text-xl px-3 dark:text-white text-black">
         Get Hired in IT Companies of Indore
       </h1>
-      <div className="mx-auto my-10 max-w-7xl rounded-3xl bg-black p-2 dark:bg-neutral-800">
+      <div className="mx-auto my-10 max-w-7xl rounded-3xl bg-gray-300 p-2 dark:bg-neutral-800">
         <ThreeDMarquee images={images} />
       </div>
     </div>

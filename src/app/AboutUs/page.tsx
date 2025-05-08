@@ -1,6 +1,6 @@
 export default function AboutUsPage() {
   return (
-    <div className="max-w-3xl mx-auto px-6 py-12">
+    <div className="max-w-3xl mx-auto px-6 py-12 bg-white dark:bg-neutral-900 dark:text-black h-screen">
       <h1 className="text-3xl font-bold mb-6 text-blue-400">About Us</h1>
 
       <p className="mb-4 text-gray-700 dark:text-gray-300">

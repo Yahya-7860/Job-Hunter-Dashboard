@@ -2,8 +2,8 @@ import React from "react";
 import Image from "next/image";
 const AvoidResumeMistakes = () => {
   return (
-    <div className="flex justify-center">
-      <div className=" dark:bg-neutral-900 text-gray-800 dark:text-gray-100 p-6 sm:p-10 rounded-2xl shadow-lg max-w-4xl my-10 border border-gray-400 mx-2">
+    <div className="flex justify-center bg-gray-300 dark:bg-black">
+      <div className=" dark:bg-neutral-900 bg-white text-gray-800 dark:text-gray-100 p-6 sm:p-10 rounded-2xl shadow-lg max-w-4xl my-10 border border-gray-400 mx-2">
         {/* Mistakes to Avoid */}
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-3 text-red-600 dark:text-red-400">

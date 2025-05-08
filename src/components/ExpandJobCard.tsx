@@ -2,6 +2,7 @@
 import React, { useEffect, useId, useRef, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { useOutsideClick } from "@/hooks/use-outside-click";
+import Link from "next/link";
 
 export default function ExpandJobCard() {
   const [active, setActive] = useState<
@@ -34,7 +35,7 @@ export default function ExpandJobCard() {
   useEffect(() => {
     const JobsFetcher = async () => {
       try {
-        await fetch("http://localhost:5000/get_posts")
+        await fetch("http://192.168.125.120:5000/get_posts")
           .then((res) => res.json())
           .then((data) => {
             if (data.Message == "success") {
@@ -117,32 +118,56 @@ export default function ExpandJobCard() {
                   </div>
                 )}
                 {/* Job Description */}
-                <div>
-                  <motion.h1 className="font-bold text-xl">
-                    Job Description
-                  </motion.h1>
-                  <motion.p className="text-gray-300">
-                    {active.jobDescription}
-                  </motion.p>
-                </div>
+                {active.jobDescription && (
+                  <div>
+                    <motion.h1 className="font-bold text-xl">
+                      Job Description
+                    </motion.h1>
+                    <motion.p className="text-gray-300">
+                      {active.jobDescription}
+                    </motion.p>
+                  </div>
+                )}
                 {/* Requirements */}
-                <div>
-                  <motion.h1 className="font-bold text-xl">
-                    Requirements
-                  </motion.h1>
-                  <motion.p className="text-gray-300">
-                    {active.requirement}
-                  </motion.p>
-                </div>
+                {active.requirement && (
+                  <div>
+                    <motion.h1 className="font-bold text-xl">
+                      Requirements
+                    </motion.h1>
+                    <motion.p className="text-gray-300">
+                      {active.requirement}
+                    </motion.p>
+                  </div>
+                )}
                 {/* Apply Link */}
-                <div>
-                  <motion.h1 className="font-bold text-xl">
-                    How to Apply
-                  </motion.h1>
-                  <motion.p className="text-gray-300">
-                    {active.applyLink}
-                  </motion.p>
-                </div>
+                {active.applyLink && (
+                  <div>
+                    <motion.h1 className="font-bold text-xl">
+                      How to Apply
+                    </motion.h1>
+                    <Link
+                      href={active.applyLink}
+                      target="_blank"
+                      className="text-blue-500"
+                    >
+                      {active.applyLink}
+                    </Link>
+                  </div>
+                )}
+                {active.email && (
+                  <div>
+                    <motion.h1 className="font-bold text-xl">
+                      Send Your Resume
+                    </motion.h1>
+                    <a
+                      href={`mailto:${active.email}`}
+                      target="_blank"
+                      className="text-blue-500"
+                    >
+                      {active.email}
+                    </a>
+                  </div>
+                )}
               </motion.div>
             </div>
           </>
