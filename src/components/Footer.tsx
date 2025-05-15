@@ -62,22 +62,25 @@ export const Footer = () => {
               </Link>
             </li>
             <li>
-              <a href="/AboutUs" className="active:text-blue-500 underline">
+              <Link href="/AboutUs" className="active:text-blue-500 underline">
                 About Us
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/Disclaimer" className="active:text-blue-500 underline">
+              <Link
+                href="/Disclaimer"
+                className="active:text-blue-500 underline"
+              >
                 Disclaimer
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="/PrivacyPolicy"
                 className="active:text-blue-500 underline"
               >
                 Privacy Policy
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
@@ -132,7 +135,7 @@ export const Footer = () => {
 
         {/* Social Media */}
         <div className="flex flex-col items-center">
-          <h3 className="font-bold  dark:text-green-200 text-green-700 text-lg mb-3">
+          <h3 className=" font-bold text-center dark:text-green-200 text-green-700 text-lg mb-3">
             Join WhatsApp Group For Hiring Updates
           </h3>
           <div className="flex space-x-4 text-xl mb-[-2rem]">

@@ -5,7 +5,7 @@ import { Carousel, Card } from "@/components/ui/apple-cards-carousel";
 import ExpandJobCard from "./ExpandJobCard";
 import ResumeTips from "../app/ResumeTips/page";
 import AvoidResumeMistakes from "@/app/AvoidResumeMistakes/page";
-import { Button } from "./ui/moving-border";
+import ExpandJobCardIntern from "./ExpandJobCardIntern";
 
 export default function SlidingCards() {
   const cards = data.map((card, index) => (
@@ -22,20 +22,18 @@ export default function SlidingCards() {
   );
 }
 
-const DummyContent = () => {
-  return (
-    <>
-      <ExpandJobCard />
-    </>
-  );
-};
-
 const data = [
   {
     category: "Just For You",
     title: "See Latest Fresher Job",
     src: "/images/hiring.jpg",
-    content: <DummyContent />,
+    content: <ExpandJobCard />,
+  },
+  {
+    category: "Learn In Corporate",
+    title: "See Lateset Internship ",
+    src: "/images/internship.jpg",
+    content: <ExpandJobCardIntern />,
   },
   {
     category: "Too much valuable",

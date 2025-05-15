@@ -3,10 +3,10 @@ import React, { useEffect, useId, useRef, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { useOutsideClick } from "@/hooks/use-outside-click";
 import Link from "next/link";
-import { useGetFullTimeJobsAPI } from "@/services/useGetFullTimeJobsAPI";
+import { useGetInernAPI } from "@/services/useGetInternAPI";
 
-export default function ExpandJobCard() {
-  const { fetchedJobs } = useGetFullTimeJobsAPI();
+export default function ExpandJobCardIntern() {
+  const { fetchedJobs } = useGetInernAPI();
   const [active, setActive] = useState<
     (typeof fetchedJobs)[number] | boolean | null
   >(null);
