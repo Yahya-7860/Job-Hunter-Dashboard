@@ -105,7 +105,7 @@ export const Footer = () => {
         <div className="flex flex-col items-center gap-3">
           <div>
             <h3 className="font-bold text-lg text-yellow-800 dark:text-yellow-100">
-              Get Hiring Alert Via Mail
+              Get Hiring Alert Via Email
             </h3>
           </div>
           <div>

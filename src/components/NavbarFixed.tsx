@@ -47,6 +47,7 @@ export function NavbarFixed() {
             <NavbarButton
               variant="primary"
               className="w-full"
+              target="_blank"
               href="https://chat.whatsapp.com/FRlwi3kKfCZ8nD0TPdUlUN"
             >
               Join WhatsApp Group

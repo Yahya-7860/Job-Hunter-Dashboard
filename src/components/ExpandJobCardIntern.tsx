@@ -4,9 +4,15 @@ import { AnimatePresence, motion } from "motion/react";
 import { useOutsideClick } from "@/hooks/use-outside-click";
 import Link from "next/link";
 import { useGetInernAPI } from "@/services/useGetInternAPI";
+import { useJobSocket } from "@/hooks/useJobSocket";
+import { SyncLoader } from "react-spinners";
 
 export default function ExpandJobCardIntern() {
-  const { fetchedJobs } = useGetInernAPI();
+  const { fetchedJobs, setFetchedJobs, loading } = useGetInernAPI();
+  useJobSocket((newJob) => {
+    console.log("New trigggggerrrrrr");
+    setFetchedJobs((prev) => [...prev, newJob]);
+  });
   const [active, setActive] = useState<
     (typeof fetchedJobs)[number] | boolean | null
   >(null);
@@ -158,7 +164,7 @@ export default function ExpandJobCardIntern() {
       </AnimatePresence>
 
       <ul className="max-w-2xl mx-auto w-full gap-4">
-        {fetchedJobs &&
+        {fetchedJobs.length > 0 ? (
           [...fetchedJobs].reverse().map((item, index) => (
             <motion.div
               // layoutId={`item-${item.role}-${id}`}
@@ -189,7 +195,15 @@ export default function ExpandJobCardIntern() {
                 View
               </motion.button>
             </motion.div>
-          ))}
+          ))
+        ) : (
+          <SyncLoader
+            color="white"
+            loading={loading}
+            size={10}
+            className="text-center"
+          />
+        )}
       </ul>
     </>
   );

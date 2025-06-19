@@ -4,9 +4,16 @@ import { AnimatePresence, motion } from "motion/react";
 import { useOutsideClick } from "@/hooks/use-outside-click";
 import Link from "next/link";
 import { useGetFullTimeJobsAPI } from "@/services/useGetFullTimeJobsAPI";
+import { useJobSocket } from "@/hooks/useJobSocket";
+import { SyncLoader } from "react-spinners";
 
 export default function ExpandJobCard() {
-  const { fetchedJobs } = useGetFullTimeJobsAPI();
+  const { fetchedJobs, setFetchedJobs, loading } = useGetFullTimeJobsAPI();
+
+  useJobSocket((newJob) => {
+    console.log("New trigggggerrrrrr");
+    setFetchedJobs((prev) => [...prev, newJob]);
+  });
   const [active, setActive] = useState<
     (typeof fetchedJobs)[number] | boolean | null
   >(null);
@@ -158,11 +165,11 @@ export default function ExpandJobCard() {
       </AnimatePresence>
 
       <ul className="max-w-2xl mx-auto w-full gap-4">
-        {fetchedJobs &&
+        {fetchedJobs.length > 0 ? (
           [...fetchedJobs].reverse().map((item, index) => (
             <motion.div
               // layoutId={`item-${item.role}-${id}`}
-              key={`item-${item.role}`}
+              key={index}
               onClick={() => setActive(item)}
               className="p-4 mb-3 border border-gray-500 flex justify-between items-center hover:bg-neutral-50 dark:bg-neutral-800 dark:hover:bg-neutral-600 rounded-xl cursor-pointer bg-gray-100"
             >
@@ -189,7 +196,15 @@ export default function ExpandJobCard() {
                 View
               </motion.button>
             </motion.div>
-          ))}
+          ))
+        ) : (
+          <SyncLoader
+            color="white"
+            loading={loading}
+            size={10}
+            className="text-center"
+          />
+        )}
       </ul>
     </>
   );
