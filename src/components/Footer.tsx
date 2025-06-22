@@ -3,6 +3,7 @@ import { FaSquareWhatsapp } from "react-icons/fa6";
 import Link from "next/link";
 import { useRef } from "react";
 import { Button } from "./ui/moving-border";
+import { ToastContainer, toast } from "react-toastify";
 
 export const Footer = () => {
   const emailRef = useRef("");
@@ -20,7 +21,8 @@ export const Footer = () => {
           .then((res) => res.json())
           .then((data) => {
             emailRef.current.value = "";
-            console.log("success");
+            toast.success("Now You will get update via mail.");
+            // console.log("success");
           });
       } catch (error) {
         console.error(error);
@@ -93,10 +95,10 @@ export const Footer = () => {
           <p className="text-sm text-black dark:text-gray-300">
             Email:{" "}
             <a
-              href="mailto:support@jobhunter.com"
+              href="mailto:help.jobhunter@gmail.com"
               className="active:text-blue-500 underline"
             >
-              support@jobhunter.com
+              help.jobhunter@gmail.com
             </a>
           </p>
         </div>
@@ -154,6 +156,7 @@ export const Footer = () => {
       <div className="text-center text-sm text-gray-500 dark:text-gray-400 py-4 border-t border-gray-800 dark:border-gray-700">
         © 2025 Job Hunter. All rights reserved.
       </div>
+      <ToastContainer position="bottom-left" />
     </footer>
   );
 };

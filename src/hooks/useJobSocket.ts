@@ -1,7 +1,8 @@
 import { useEffect } from "react";
 import { io } from "socket.io-client";
 
-const socket = io("http://192.168.165.120:5000", {
+//!change this url everytime with new network
+const socket = io("http://192.168.217.120:5000", {
   transports: ["websocket"],
 });
 

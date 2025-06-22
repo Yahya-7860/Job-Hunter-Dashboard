@@ -70,10 +70,10 @@ export default function DisclaimerPage() {
         If you have any concerns or wish to report suspicious listings shared
         via our platform, feel free to contact us at{" "}
         <a
-          href="mailto:support@jobhunter.com"
+          href="mailto:help.jobhunter@gmail.com"
           className="text-blue-600 underline"
         >
-          support@jobhunter.com
+          help.jobhunter@gmail.com
         </a>
         .
       </p>

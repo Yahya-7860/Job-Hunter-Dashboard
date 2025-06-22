@@ -10,7 +10,7 @@ export const useGetInernAPI = () => {
       setLoading(true);
       try {
         //!change this url everytime with new network
-        await fetch(`http://192.168.43.161:5000/get_intern_posts`)
+        await fetch(`http://192.168.217.120:5000/get_intern_posts`)
           .then((res) => res.json())
           .then((data) => {
             if (data.Message == "success") {
